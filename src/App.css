@@ -1,38 +1,135 @@
-.App {
-  text-align: center;
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
+html{
+  width: 100vw;
+  height: 100vh;
 }
 
 @keyframes App-logo-spin {
-  from {
+  0%{
     transform: rotate(0deg);
   }
-  to {
+
+  100%{
     transform: rotate(360deg);
   }
+}
+
+.App{
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.roullette {
+  width: 550px;
+  height: 550px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  border: 30px solid rgb(133, 197, 133);
+  position: relative;
+}
+
+.roullette > .minute, .roullette > .second, .roullette > .hour {
+  width: 600px;
+  height: 600px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  border: 40px solid rgb(167, 207, 167);
+  position: absolute;
+}
+
+.minute{
+  animation: App-logo-spin infinite 3600s linear;
+}
+
+.second{
+  animation: App-logo-spin infinite 60s linear;
+}
+
+.hour{
+  animation: App-logo-spin infinite 43200s linear;
+}
+
+.number{
+  position: absolute;
+  background: rgb(245, 243, 241);
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  font-weight: 400;
+  font-family: cursive;
+}
+
+.twelve{
+  left: calc(50% - 5px);
+  top: 0;
+}
+.three{
+  right: 0;
+  bottom: calc(50% - 5px);
+}
+.six{
+  left: calc(50% - 5px);
+  bottom: 0;
+}
+.nine{
+  left: 0 ;
+  bottom: calc(50% - 5px);
+}
+
+.roullette .second::after{
+  position: absolute;
+  content: '';
+  border-radius: 50%;
+  background: rgb(216, 117, 36);
+  width: 220px;
+  height: 5px;
+  left: calc(50% - 5px) ;
+  bottom: calc(50% - 5px);
+}
+
+.roullette .minute::after{
+  position: absolute;
+  content: '';
+  border-radius: 50%;
+  background: rgb(113, 128, 113);
+  width: 200px;
+  height: 8px;
+  left: calc(50% - 5px) ;
+  bottom: calc(50% - 5px);
+}
+
+.roullette .hour::after{
+  position: absolute;
+  content: '';
+  border-radius: 50%;
+  background: rgb(59, 56, 52);
+  width: 180px;
+  height: 10px;
+  left: calc(50% - 5px) ;
+  bottom: calc(50% - 5px);
+}
+
+.dot{
+  border-radius: 50%;
+  background: rgb(133, 223, 133);
+  width: 10px;
+  height: 10px;
+  left: 50%;
+  z-index: 10;
 }
